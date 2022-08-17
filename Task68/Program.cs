@@ -1,10 +1,10 @@
-﻿int M = 0;
-int.TryParse(Console.ReadLine(), out M);
-int N = 0;
-int.TryParse(Console.ReadLine(), out N);
+﻿int m = 0;
+int.TryParse(Console.ReadLine(), out m);
+int n = 0;
+int.TryParse(Console.ReadLine(), out n);
 
 
-int rAckermann(int m, int n)
+int Ackermann(int m, int n)
 {
     
     if (m == 0) 
@@ -13,11 +13,13 @@ int rAckermann(int m, int n)
     }
     else if (n == 0 && m > 0) 
     {
-        return Ackerman(m - 1, 1);
+        return Ackermann(m - 1, 1);
     } 
     else 
     {
-        return Ackermann(m - 1, recursion(m, n - 1));
+        return Ackermann(m - 1, Ackermann(m, n - 1));
     }
 }
-Console.WriteLine(Ackermann (M,N));
+
+Console.WriteLine(Ackermann (m,n));
+
